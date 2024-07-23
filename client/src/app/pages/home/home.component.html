@@ -1,8 +1,11 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Fortnite Stats</ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content fullscreen="true">
   <form [formGroup]="username">
     <ion-item>
-      <!-- <ion-label>User: </ion-label> -->
-      <!-- <input formControlName="name" placeholder="Player to search"> -->
       <ion-input label="User: " type="text" formControlName="name" placeholder="Player to search"></ion-input>
     </ion-item>
     <ion-item>
@@ -12,18 +15,18 @@
         <ion-select-option value="epic">Epic</ion-select-option>
         </ion-select>
     </ion-item>
-    <ion-button class="ion-margin-start" color="primary" (click)="searchPlayer(currentSegment)">Buscar</ion-button>
+    <ion-button [disabled]="username.get('name').value.length===0" class="search" expand="block" fill="solid" shape="round" (click)="searchPlayer(currentSegment)">Search</ion-button>
   </form>
   
-  <ion-segment class="ion-margin-top ion-text-center" (ionChange)="onSegmentChange($event)" [value]="currentSegment">
+  <ion-segment color="light" class="ion-margin-top ion-text-center" (ionChange)="onSegmentChange($event)" [value]="currentSegment">
     <ion-segment-button (click)="searchPlayer(currentSegment)" value="solo">
-      <ion-label>Solo</ion-label>
+      <ion-label class="button-segment">Solo</ion-label>
     </ion-segment-button>
     <ion-segment-button (click)="searchPlayer(currentSegment)" value="duo">
-      <ion-label>Duo</ion-label>
+      <ion-label class="button-segment">Duo</ion-label>
     </ion-segment-button>
     <ion-segment-button (click)="searchPlayer(currentSegment)" value="squad">
-      <ion-label>Squad</ion-label>
+      <ion-label class="button-segment">Squad</ion-label>
     </ion-segment-button>
   </ion-segment>
 

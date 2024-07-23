@@ -1,8 +1,19 @@
 ion-card{
-    --background:#ACE2E1;
+    --background:#d6e3ff;
+    -webkit-box-shadow: 2px 3px 18px 0px rgba(44, 62, 80, 1);
+    -moz-box-shadow: 2px 3px 18px 0px rgba(44, 62, 80, 1);
+    box-shadow: 2px 3px 18px 0px rgba(44, 62, 80, 1);
+    border-radius: 10px;
 }
 
-ion-label{
-    --color:red;
-    
+ion-list{
+    border-radius: 10px;
+}
+
+ion-label, ion-card-title{
+    font-family: 'Custom font';
+}
+
+ion-card-title{
+    font-weight: bold;
 }
